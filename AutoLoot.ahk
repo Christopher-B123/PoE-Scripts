@@ -22,7 +22,7 @@ IniRead, SpeedValue, % myIniFile, mySection, Geschwindigkeit
 ;------------------------------------------------------------------------------------------------------------------------------------
 Gui, AutoLoot:New, +Border
 Gui, Color, 202020
-Gui, Font, C874600
+Gui, Font, CDEE74E
 Gui, Font, s12, Verdana
 Gui, Font, w550
 Gui, Add, Text,, Changing this slider will determine how fast your Looter picks up`nthe next Item.`nJust try it and find the speed which suits you best.`n(Possible Values: 1.00-4.00) 
@@ -47,15 +47,19 @@ FarbeGui:
     Gui,2: Color, 202020
     Gui,2: Font, s10, Verdana
     Gui,2: Font, w550
-    Gui,2: Font, C874600
+    Gui,2: Font, CDEE74E
+    Gui,2: Add, Text,, Dieses Fenster dient zur Änderung der Filterfarbe.
 
-    Gui,2: Add, Text,, Hier die Farbe des Lootfilters eingegeben werden.
-        Gui,2: Add, Button, x170 y50 h20 w100 gGui2Button, Done!
-    Gui,2: Show, w350 h100, Path of Exile - AutoLoot
+    Gui,2: Font, s9, Verdana
+    Gui,2: Font, 202020
+    Gui,2: Add, Button, x235 y35 h20 w110 gGui2Button, Done!
+    Gui, Add, Edit, r1 x10 y35 h15 w160 vNeuerFarbwert, %ItemBoxColor%
+    Gui,2: Show, w350 h62, Path of Exile - AutoLoot
 return
 
 Gui2Button:
-
+    Gui,2: Submit, NoHide
+    ItemBoxColor := NeuerFarbwert
     Gui,2: Destroy
 return
 

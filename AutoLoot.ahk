@@ -37,7 +37,8 @@ Gui, Font, s8
 Gui, Add, Button, x490 y80 h15 w60 gFarbeGui, Farbe
 
 Gui, Show, w560 h150, Path of Exile - AutoLoot
-;ARSCH
+return 
+
 ; Labels
 ;------------------------------------------------------------------------------------------------------------------------------------
 ;------------------------------------------------------------------------------------------------------------------------------------
@@ -49,7 +50,13 @@ FarbeGui:
     Gui,2: Font, C874600
 
     Gui,2: Add, Text,, Hier die Farbe des Lootfilters eingegeben werden.
+        Gui,2: Add, Button, x170 y50 h20 w100 gGui2Button, Done!
     Gui,2: Show, w350 h100, Path of Exile - AutoLoot
+return
+
+Gui2Button:
+
+    Gui,2: Destroy
 return
 
 SpeedSlider: 
